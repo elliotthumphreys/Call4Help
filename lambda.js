@@ -1,7 +1,9 @@
-// lambda.js
-'use strict'
 const awsServerlessExpress = require('aws-serverless-express')
-const app = require('./app')
+const app = require('./app.js')
 const server = awsServerlessExpress.createServer(app)
 
-exports.handler = (event, context) => { awsServerlessExpress.proxy(server, event, context) }
+exports.handler = async (event, context) => {
+    const proxy = await awsServerlessExpress.proxy(server, event, context, 'PROMISE').promise
+
+    return proxy
+}

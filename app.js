@@ -4,7 +4,9 @@ const awsServerlessExpressMiddleware = require('aws-serverless-express/middlewar
 
 const app = express()
 
-app.use(bodyParser)
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 app.use(awsServerlessExpressMiddleware.eventContext())
 
 const port = 8080
