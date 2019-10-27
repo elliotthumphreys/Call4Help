@@ -1,14 +1,15 @@
 const express = require('express')
 const bodyParser = require('body-parser');
+const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 
 const app = express()
 
-app.use(bodyParser);
+app.use(bodyParser)
+app.use(awsServerlessExpressMiddleware.eventContext())
 
-const port = 3000
+const port = 8080
 
 app.get(['/', 'beta/'], (req, res) => {
-
     res.send('Get recieved')
 })
 
