@@ -27,6 +27,4 @@ app.post('/', (req, res) => {
     res.send('Post recieved')   
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-
 module.exports = app
