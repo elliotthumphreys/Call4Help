@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ElliottJH/Call4Help#readme",
   "dependencies": {
+    "aws-serverless-express": "^3.3.6",
     "express": "^4.17.1"
   }
 }
