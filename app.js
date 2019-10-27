@@ -9,11 +9,13 @@ app.use(awsServerlessExpressMiddleware.eventContext())
 
 const port = 8080
 
-app.get(['/', 'beta/'], (req, res) => {
+app.get('/', (req, res) => {
+    console.log('Get recieved')
     res.send('Get recieved')
 })
 
-app.post(['/', 'beta/'], (req, res) => {
+app.post('/', (req, res) => {
+    console.log('Post recieved')
     const { 
         id, 
         to,
